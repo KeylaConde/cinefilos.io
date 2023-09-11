@@ -123,4 +123,8 @@ header nav a.activo {
     .principal-movie .description {
         max-width: 100%;
     }
+    
+    .button {
+        margin-bottom: 10px;
+    }
 }
