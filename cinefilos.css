@@ -1,0 +1,126 @@
+:root {
+    --red: rgb(229,9,20);
+    --brown: rgba(37, 28, 4, 0.952);
+    --blue: rgb(40, 107, 124);
+    --gray: rgba(96, 100, 99, 0.966);
+    --black: rgba(0, 0, 0);
+    --white: rgb(247, 246, 246);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: var(--black);
+    font-family: 'Open Sans', sans-serif;
+}
+.container {
+    width: 90%;
+    margin: auto;
+}
+header {
+    padding: 30px 0;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon {
+    display:flex;
+}
+header .icon .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-weight: normal;
+    color: var(--red);
+    font-size: 40px;
+}
+header .icon .titulo {
+    background: linear-gradient(var(--white), var(--gray));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Vast Shadow', serif;
+    margin-top: 8px;
+    margin-left: 5px;
+    
+}
+header nav a {
+    color: var(--gray);
+    text-decoration: none;
+    margin-right: 20px;
+}
+header nav a:hover,
+header nav a.activo {
+    color: var(--white);
+}
+
+/* Principal Movie */
+.principal-movie {
+    font-size: 16px;
+    min-height: 40.62em;
+    color: var(--white);
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(./img/series/game_of_thrones_h2.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+.principal-movie .container {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+.principal-movie .movie-title {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+.principal-movie .description {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+.principal-movie .button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: var(--white);
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+} 
+.principal-movie .button:hover {
+    background: var(--white);
+    color: var(--black);
+}
+.principal-movie .button i {
+    margin-right: 1.25em;
+}
+
+/* Media Queries */
+@media screen and (max-width: 800px){
+    header .titulo {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .principal-movie {
+        font-size: 14px;
+    }
+
+    .principal-movie .description {
+        max-width: 100%;
+    }
+}
