@@ -227,6 +227,10 @@ header nav a.active {
     .principal-movie .description {
         max-width: 100%;
     }
+
+    .button {
+        margin-bottom: 10px;
+    }
     
     .recommended-movies .carousel-container {
         overflow: visible;
