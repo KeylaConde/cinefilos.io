@@ -7,11 +7,23 @@ const rightArrow = document.getElementById('right-arrow');
 //---- Event Listener for Right Arrow ----//
 rightArrow.addEventListener('click', () => {
     row.scrollLeft += row.offsetWidth;
+
+    const activeIndicator = document.querySelector('.indicators .active');
+    if(activeIndicator.nextSibling){
+        activeIndicator.nextSibling.classList.add('active');
+        activeIndicator.classList.remove('active');
+    }
 });
 
 //---- Event Listener for Left Arrow ----//
 leftArrow.addEventListener('click', () => {
     row.scrollLeft -= row.offsetWidth;
+
+    const activeIndicator = document.querySelector('.indicators .active');
+    if(activeIndicator.previousSibling){
+        activeIndicator.previousSibling.classList.add('active');
+        activeIndicator.classList.remove('active');
+    }
 });
 
 //---- Pagination ----//
@@ -31,3 +43,18 @@ for(let i = 0; i < numberPages; i++){
         e.target.classList.add('active');
     });
 }
+
+//--- HOVER ---//
+movies.forEach((movie) => {
+    movie.addEventListener('mouseenter', (e) => {
+        const element = e.currentTarget;
+        setTimeout(() => {
+            movies.forEach(movie => movie.classList.remove('hover'));
+            element.classList.add('hover');
+        }, 300);
+    });
+});
+
+row.addEventListener('mouseleave', () => {
+    movies.forEach(movie => movie.classList.remove('hover'));
+})
